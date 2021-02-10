@@ -5,11 +5,40 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BOQ section</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/54d282cde9.js" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <link href="BOQ.css" rel="stylesheet" type="text/css">
+  <script>
+    $(document).ready(function($)
+    {
+      //--->add row at the end > start
+      $(document).on('click',".btn_row_add_below_end", function(e)
+      {
+        var tableBody = $(document).find('.tbl_code_with_mark').find("tbody");
+        var trLast = tableBody.find("tr:last");
+        var trNew = trLast.clone();
+        trLast.after(trNew);
+      });
+    });
+    
+
+    $(document).ready(function(){
+      $(document).on('click',".btn_row",function(e){
+        var tableBody1 = $(document).find('.tbl_code_with_mark2').find("tbody");
+        var trLast1 = tableBody1.find("tr:last");
+        var trNew1 = trLast1.clone();
+        trLast1.after(trNew1);
+      })
+    })
+  </script>
   <style>
+  .box2{
+    margin-top:0px;
+    padding: 20px;
+    border: 1px solid lightblue;
+    border-top: none;
+}
     .header{
     padding:20px 10px 15px ;
     letter-spacing: 3px;
@@ -43,7 +72,7 @@
     transform: scale(1.01,1.01);
 }
 .box1{
-    width:100px;
+    width:150px;
     margin-left: 20px;
     margin-bottom: 25px;
 }
@@ -51,7 +80,7 @@
     margin-left: 20px;
 }
 .bt1{
-    margin-top:75px;
+    margin-top:30px;
     color:white;
     border: 1px solid #669eb1;
     background-color:#669eb1;
@@ -131,94 +160,213 @@
     <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
   </svg>Select BOQ</p>
   <hr />
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link " id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Create BOQ</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Existing BOQ</a>
+      </li>
+      </ul>
 
-<div class="row">
-  <div class="col-md-3">
-    <div class="card_1 card mb-3" style="max-width: 320px;">
-      <div class="row g-0">
-        <div class="col-md-4"><a href="" >
-          <i style="margin-left:40px;margin-top: 10px;" class="sh1 far fa-plus-square fa-2x"></i>
-        </a>
-        </div>
-        <div class="col-md-8">
-          <a style="text-decoration:none;color:#385c60" href="#create_BOQ" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">
-          <div class="card-body">
-            <p class="fs-6 card-title">Create BOQ</p>
-            <p style="font-size:12px;color:#81abb9" class="fs-7 card-text">GO through it and Create a new Bill Of Quantity.</p>
-            <p style="font-size:12px;" class="card-text"><small class="text-muted">Proceed >></small></p>
-          </div>
-          </a>
-        </div>
-      </div>
+      <div class="tab-content" id="myTabContent">
+        <div class="box2 tab-pane fade show " id="home" role="tabpanel" aria-labelledby="home-tab">
+            
+   <div style="margin-top:50px" class="container-fluid row">
+    <p style="color:#669eb1;" class="fw-bold fs-6">Create BOQ</p>
+    <div class="col-md-1">
+     <label for="site" class="label1 fs-6 form-label">Site</label>
+     <input style="font-size:12px;"  placeholder="Enter Site" class="box1 form-control" type="text" id="site">
+    </div>
+    <div style="margin-left: 65px;" class="col-md-1">
+     <label for="class" class="label1 fs-6 form-label">Class</label>
+     <input style="font-size:12px;"  placeholder="Enter Class" class="box1 form-control" type="text" id="class">
+    </div>
+    <div style="margin-left: 65px;" class="col-md-1">
+     <label for="utility" class="label1 fs-6 form-label">Utility</label>
+     <input style="font-size:12px;"  placeholder="Enter Utility" class="box1 form-control" type="text" id="utility">
+    </div>
+    <div style="margin-left: 65px;" class="col-md-1">
+     <label for="class" class="label1 fs-6 form-label">Pressure</label>
+     <input style="font-size:12px;"  placeholder="Enter Pressure" class="box1 form-control" type="text" id="class">
+    </div>
+    <div style="margin-left: 65px;" class="col-md-1">
+     <label for="utility" class="label1 fs-6 form-label">Temperature</label>
+     <input style="font-size:12px;"  placeholder="Enter Temperature" class="box1 form-control" type="text" id="utility">
+    </div>
+    
+   <div style class="col-md-1">
+     <!-- <label for="utility" class="label1 fs-6 form-label"><small>Enter Sheetname</small> </label> -->
+     <input style="font-size:12px;margin-top:32px;margin-left: 80px;"  placeholder="Enter Sheetname" class="box1 form-control" type="text" id="utility">
+    </div>
+    <div style="margin-top:41px;margin-left: 85px;" class="col-md-2">
+     <button style="font-size:13px;margin-top:-16px;margin-left: 60px;" type="button" class="btn bt1 btn-outline">Add Sheet</button>
+   </div>
+   <div align="center" class="col-md-1">
+    <div class="dropdown">
+      <button  style="font-size:13px;margin-left: -10px;" type="button" class="btn bt1 btn-outline dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Choose Action
+      </button>
+      <ul class="dropdown-menu">
+       <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Delete This BOQ</a></li>
+       <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Download This BOQ</a></li>
+       <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Generate BOQ</a></li>
+       <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Generate Quotation</a></li>
+      </ul>
     </div>
   </div>
-      <div align="left" class="col-md-3">
-        <div class="card_1 card mb-3" style="max-width: 320px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <a href="#">
-              <i style="margin-left:45px;margin-top: 10px;" class="sh1 far fa-file-alt fa-2x"></i>
-            </a>
-            </div>
-
-            <div class="col-md-8">
-              <a style="text-decoration:none;color:#385c60"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <div class="card-body">
-                <p class="fs-6 card-title">Existing BOQ(s)</p>
-                <p style="font-size:12px;color:#81abb9" class="card-text">GO through the existing versions of previous BOQ(s).</p>
-                <p style="font-size:12px;" class="card-text"><small class="text-muted">Proceed >></small></p>
-              </div>
-            </a>
-            </div>
+ </div>
+ <ul style="margin-top:40px;" class="nav nav-tabs" id="myTab" role="tablist">
+   <li class="nav-item" role="presentation">
+     <a style="font-size:15px;" class="nav-link active" id="sheet1_tab" data-bs-toggle="tab" href="#Sheet1" role="tab" aria-controls="Sheet1" aria-selected="true">Sheet1</a>
+   </li>
+   <li class="nav-item" role="presentation">
+     <a style="font-size:15px;" class="nav-link" id="sheet2_tab" data-bs-toggle="tab" href="#sheet2" role="tab" aria-controls="sheet2" aria-selected="false">sheet2</a>
+   </li>
+   <li class="nav-item" role="presentation">
+     <a style="font-size:15px;" class="nav-link" id="sheet3_tab" data-bs-toggle="tab" href="sheet3" role="tab" aria-controls="sheet3" aria-selected="false">sheet3</a>
+   </li>
+ </ul>
+ <div class="tab-content" id="myTabContent">
+   <div class="tab-pane fade show active" id="Sheet1" role="tabpanel" aria-labelledby="sheet1_tab">
+ <div class="row">
+   <div class="col-md-12">
+     <div class="table-responsive">
+     <table class="table table-bordered caption-top tbl_code_with_mark">
+       <caption></caption>
+       <thead>
+         <tr>
+           <th style="font-size:13px;" scope="col">#</th>
+           <th style="font-size:13px;" scope="col">Product</th>
+           <th style="font-size:13px;" scope="col">MOC</th>
+           <th style="font-size:13px;" scope="col">Manufacture Type</th>
+           <th style="font-size:13px;" scope="col">Class/Grade</th>
+           <th style="font-size:13px;" scope="col">Material Specs</th>
+           <th style="font-size:13px;" scope="col">Standard Type</th>
+           <th style="font-size:13px;" scope="col">Ends</th>
+           <th style="font-size:13px;" scope="col">Size</th>
+           <th style="font-size:13px;" scope="col">Qty</th>
+           <th style="font-size:13px;" scope="col">Base Supply Rate</th>
+           <th style="font-size:13px;" scope="col">Supply Rate</th>
+           <th style="font-size:13px;" scope="col">Base Labour Rate</th>
+           <th style="font-size:13px;" scope="col">Labour Rate</th>
+           <th style="font-size:13px;" scope="col">Supply Amount</th>
+           <th style="font-size:13px;" scope="col">Labour Amount</th>
+           <th style="font-size:13px;" scope="col">Action</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <th scope="row"><div class="form-check">
+             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+           </div>
+           </th>
+           <td style="font-size:13px;">Pipe</td>
+           <td style="font-size:13px;">MS</td>
+           <td style="font-size:13px;">Seamless</td>
+           <td style="font-size:13px;">20</td>
+           <td style="font-size:13px;">A-105</td>
+           <td style="font-size:13px;">ASME-36.10</td>
+           <td style="font-size:13px;">Buttweld	</td>
+           <td style="font-size:13px;">15NB-1/2"</td>
+           <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+           <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+           <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+           <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+           <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+           <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+           <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+           <td><span class="btn btn-sm btn-danger btn_row_add_below_end">+</span></td>
+         
+          </tr>  
+         <tr>
+          <th scope="row"><div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
           </div>
-        </div>
-      </div>
+          </th>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td><span class="btn btn-sm btn-danger btn_row_add_below_end">+</span></td>
+        </tr>  
+      </tbody>
+     </table>
+     <!-- <div class="text-center"> -->
+      <!-- <span class="btn btn-sm btn-danger btn_row_add_below_end"> Add Row</span> -->
+    <!-- </div> -->
+   </div>
+   </div>
+ </div>
+</div>
+</div>
+</div>
+
+
+
+<div class="tab-pane fade box2" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div style="margin-top:30px" class="row">
+        <div align="center" class="col-md-12">
+          <div class="dropdown">
+            <button class="fs-6 drop1 btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+             Quotation Revision
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a style="font-size:13px;" class="a1 dropdown-item" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Revision1</a></li>
+              <li><a style="font-size:13px;" class="a1 dropdown-item" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Revision1</a></li>
+              <li><a style="font-size:13px;" class="a1 dropdown-item" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Revision1</a></li>
+              <li><a style="font-size:13px;" class="a1 dropdown-item" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Revision1</a></li>
+            </ul>
+          </div>
     </div>
-    <div style="margin-top: 20px;" class="collapse" id="create_BOQ">
-      <div class="card-title">
-        <p style="color:#669eb1;" class="fw-bold fs-6">Create BOQ</p>
-      </div>
-      <div class="card card-body">
-       <div  class="container-fluid row">
-         <div class="col-md-3">
-          <label for="Client" class="label1 fs-6 form-label">Client</label>
-          <input style="font-size:12px;"  placeholder="Client Name" class="box1 form-control" type="text" id="Client">
-         </div>
-         <div class="col-md-3">
+
+    </div>
+    <div class="collapse" id="collapseExample">
+      <div class="card1 card card-body">
+        <div  class="container-fluid row">
+        <p class="fs-6">Quotation: Revision1</p>
+          
+        <div style="margin-left: -25px;" class="col-md-1">
           <label for="site" class="label1 fs-6 form-label">Site</label>
           <input style="font-size:12px;"  placeholder="Enter Site" class="box1 form-control" type="text" id="site">
          </div>
-         <div class="col-md-3">
+         <div style="margin-left: 65px;" class="col-md-1">
           <label for="class" class="label1 fs-6 form-label">Class</label>
           <input style="font-size:12px;"  placeholder="Enter Class" class="box1 form-control" type="text" id="class">
          </div>
-         <div class="col-md-3">
+         <div style="margin-left: 65px;" class="col-md-1">
           <label for="utility" class="label1 fs-6 form-label">Utility</label>
           <input style="font-size:12px;"  placeholder="Enter Utility" class="box1 form-control" type="text" id="utility">
          </div>
-       </div>
-       <div  class="container-fluid row">
-         <div class="col-md-3">
-          <label for="Client" class="label1 fs-6 form-label">DOC Name</label>
-          <input style="font-size:12px;"  placeholder="Enter DOC Name" class="box1 form-control" type="text" id="Client">
-         </div>
-         <div class="col-md-3">
-          <label for="site" class="label1 fs-6 form-label">DOC Number</label>
-          <input style="font-size:12px;"  placeholder="Enter DOC Number" class="box1 form-control" type="text" id="site">
-         </div>
-         <div class="col-md-3">
+         <div style="margin-left: 65px;" class="col-md-1">
           <label for="class" class="label1 fs-6 form-label">Pressure</label>
           <input style="font-size:12px;"  placeholder="Enter Pressure" class="box1 form-control" type="text" id="class">
          </div>
-         <div class="col-md-3">
+         <div style="margin-left: 65px;" class="col-md-1">
           <label for="utility" class="label1 fs-6 form-label">Temperature</label>
           <input style="font-size:12px;"  placeholder="Enter Temperature" class="box1 form-control" type="text" id="utility">
          </div>
-       </div>
-       <div class="row">
-        <div align="center" class="col-md-4">
-          <div class="btn-group dropend">
-            <button  style="font-size:13px;" type="button" class="btn bt1 btn-outline dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+         <div style class="col-md-1">
+          <!-- <label for="utility" class="label1 fs-6 form-label"><small>Enter Sheetname</small> </label> -->
+          <input style="font-size:12px;margin-top:30px;margin-left: 90px;"  placeholder="Enter Sheetname" class="box1 form-control" type="text" id="utility">
+         </div>
+         <div style="margin-top:41px;margin-left: 85px;" class="col-md-2">
+          <button style="font-size:13px;margin-top:-20px;margin-left:70px" type="button" class="btn bt1 btn-outline">Add Sheet</button>
+        </div>
+         <div align="center" class="col-md-1">
+          <div class="dropdown">
+            <button  style="font-size:13px;margin-left: -30px;" type="button" class="btn bt1 btn-outline dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               Choose Action
             </button>
             <ul class="dropdown-menu">
@@ -229,193 +377,101 @@
             </ul>
           </div>
         </div>
-          <div align="center" class="col-md-4">
-            <p style="font-size:13px;margin-top:45px;color: grey">Enter Sheetname And proceed</p>
-            <input placeholder="Enter Sheetname" class="form-control" style="border:1px solid grey;width: 150px;font-size:12px;" type="text">
-            <br />
-            <button style="font-size:13px;margin-top:-20px" type="button" class="btn bt1 btn-outline">Add Sheet</button>
+        
+        </div>
+        <ul style="margin-top:40px;" class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a style="font-size:15px;" class="nav-link active" id="sheet1_tab" data-bs-toggle="tab" href="#Sheet1" role="tab" aria-controls="Sheet1" aria-selected="true">Sheet1</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a style="font-size:15px;" class="nav-link" id="sheet2_tab" data-bs-toggle="tab" href="#sheet2" role="tab" aria-controls="sheet2" aria-selected="false">sheet2</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a style="font-size:15px;" class="nav-link" id="sheet3_tab" data-bs-toggle="tab" href="sheet3" role="tab" aria-controls="sheet3" aria-selected="false">sheet3</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="Sheet1" role="tabpanel" aria-labelledby="sheet1_tab">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="table-responsive">
+            <table class="table table-bordered caption-top tbl_code_with_mark2">
+              <caption></caption>
+              <thead>
+                <tr>
+                  <th style="font-size:13px;" scope="col">#</th>
+                  <th style="font-size:13px;" scope="col">Product</th>
+                  <th style="font-size:13px;" scope="col">MOC</th>
+                  <th style="font-size:13px;" scope="col">Manufacture Type</th>
+                  <th style="font-size:13px;" scope="col">Class/Grade</th>
+                  <th style="font-size:13px;" scope="col">Material Specs</th>
+                  <th style="font-size:13px;" scope="col">Standard Type</th>
+                  <th style="font-size:13px;" scope="col">Ends</th>
+                  <th style="font-size:13px;" scope="col">Size</th>
+                  <th style="font-size:13px;" scope="col">Qty</th>
+                  <th style="font-size:13px;" scope="col">Base Supply Rate</th>
+                  <th style="font-size:13px;" scope="col">Supply Rate</th>
+                  <th style="font-size:13px;" scope="col">Base Labour Rate</th>
+                  <th style="font-size:13px;" scope="col">Labour Rate</th>
+                  <th style="font-size:13px;" scope="col">Supply Amount</th>
+                  <th style="font-size:13px;" scope="col">Labour Amount</th>
+                  <th style="font-size:13px;" scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  </div>
+                  </th>
+                  <td style="font-size:13px;">Pipe</td>
+                  <td style="font-size:13px;">MS</td>
+                  <td style="font-size:13px;">Seamless</td>
+                  <td style="font-size:13px;">20</td>
+                  <td style="font-size:13px;">A-105</td>
+                  <td style="font-size:13px;">ASME-36.10</td>
+                  <td style="font-size:13px;">Buttweld	</td>
+                  <td style="font-size:13px;">15NB-1/2"</td>
+                  <td style="font-size:13px;"><input style="width:40px;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                  <td style="font-size:13px;"><input style="width:40px;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                  <td style="font-size:13px;"><input style="width:40px;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                  <td style="font-size:13px;"><input style="width:40px;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                  <td style="font-size:13px;"><input style="width:40px;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                  <td style="font-size:13px;"><input style="width:40px;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                  <td style="font-size:13px;"><input style="width:40px;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                  <td><span class="btn btn-sm btn-danger btn_row">+</span></td>
+               
+                </tr>
+                <tr>
+          <th scope="row"><div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
           </div>
-          <div align="center" class="col-md-4">
-            <p style="font-size:13px;margin-top:45px;color: grey">Select Items to be added to the sheet</p>
-            <select style="margin-left:20px;width: 150px;height:30px" class="form-select form-control">
-             <option selected></option>
-             <option style="font-size:13px;" value="1">Add New Product</option>
-             <option style="font-size:13px;" value="2">Add Accessories and Equipments</option>
-             </select>
-          </div>
-      </div>
-      </div>
-    
-    </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-          <div class="modal-body">
-            <div class="row">
-              <div align="center" class="col-md-12">
-                <div class="dropdown">
-                  <button class="fs-6 drop1 btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                   Quotation Revision
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a style="font-size:13px;" class="a1 dropdown-item" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Revision1</a></li>
-                    <li><a style="font-size:13px;" class="a1 dropdown-item" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Revision1</a></li>
-                    <li><a style="font-size:13px;" class="a1 dropdown-item" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Revision1</a></li>
-                    <li><a style="font-size:13px;" class="a1 dropdown-item" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Revision1</a></li>
-                  </ul>
-                </div>
-          </div>
+          </th>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+          <td><span class="btn btn-sm btn-danger btn_row">+</span></td>
 
+        </tr>  
+                
+              </tbody>
           </div>
-          <div class="collapse" id="collapseExample">
-            <div class="card1 card card-body">
-              <div  class="container-fluid row">
-              <p class="fs-6">Quotation: Revision1</p>
-                <div class="col-md-3">
-                 <label for="Client" class="label1 form-label">Client</label>
-                 <input  style="font-size:13px;" placeholder="Client Name" class="box1 form-control" type="text" id="Client">
-                </div>
-                <div class="col-md-3">
-                 <label for="site" class="label1 form-label">Site</label>
-                 <input style="font-size:13px;"  placeholder="Enter Site" class="box1 form-control" type="text" id="site">
-                </div>
-                <div class="col-md-3">
-                 <label for="class" class="label1 form-label">Class</label>
-                 <input style="font-size:13px;"  placeholder="Enter Class" class="box1 form-control" type="text" id="class">
-                </div>
-                <div class="col-md-3">
-                 <label for="utility" class="label1 form-label">Utility</label>
-                 <input style="font-size:13px;"  placeholder="Enter Utility" class="box1 form-control" type="text" id="utility">
-                </div>
-              </div>
-              <div  class="container-fluid row">
-                <div class="col-md-3">
-                 <label for="Client" class="label1 form-label">DOC Name</label>
-                 <input style="font-size:13px;"  placeholder="Enter DOC Name" class="box1 form-control" type="text" id="Client">
-                </div>
-                <div class="col-md-3">
-                 <label for="site" class="label1 form-label">DOC Number</label>
-                 <input style="font-size:13px;"  placeholder="Enter DOC Number" class="box1 form-control" type="text" id="site">
-                </div>
-                <div class="col-md-3">
-                 <label for="class" class="label1 form-label">Pressure</label>
-                 <input style="font-size:13px;"  placeholder="Enter Pressure" class="box1 form-control" type="text" id="class">
-                </div>
-                <div class="col-md-3">
-                 <label for="utility" class="label1 form-label">Temperature</label>
-                 <input style="font-size:13px;"  placeholder="Enter Temperature" class="box1 form-control" type="text" id="utility">
-                </div>
-              </div>
-              <ul style="margin-top:40px;" class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <a style="font-size:15px;" class="nav-link active" id="sheet1_tab" data-bs-toggle="tab" href="#Sheet1" role="tab" aria-controls="Sheet1" aria-selected="true">Sheet1</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a style="font-size:15px;" class="nav-link" id="sheet2_tab" data-bs-toggle="tab" href="#sheet2" role="tab" aria-controls="sheet2" aria-selected="false">sheet2</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a style="font-size:15px;" class="nav-link" id="sheet3_tab" data-bs-toggle="tab" href="sheet3" role="tab" aria-controls="sheet3" aria-selected="false">sheet3</a>
-                </li>
-              </ul>
-              <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="Sheet1" role="tabpanel" aria-labelledby="sheet1_tab">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="table-responsive">
-                  <table class="table table-bordered caption-top">
-                    <caption></caption>
-                    <thead>
-                      <tr>
-                        <th style="font-size:13px;" scope="col">#</th>
-                        <th style="font-size:13px;" scope="col">Product</th>
-                        <th style="font-size:13px;" scope="col">MOC</th>
-                        <th style="font-size:13px;" scope="col">Manufacture Type</th>
-                        <th style="font-size:13px;" scope="col">Class/Grade</th>
-                        <th style="font-size:13px;" scope="col">Material Specs</th>
-                        <th style="font-size:13px;" scope="col">Standard Type</th>
-                        <th style="font-size:13px;" scope="col">Ends</th>
-                        <th style="font-size:13px;" scope="col">Size</th>
-                        <th style="font-size:13px;" scope="col">Qty</th>
-                        <th style="font-size:13px;" scope="col">Base Supply Rate</th>
-                        <th style="font-size:13px;" scope="col">Supply Rate</th>
-                        <th style="font-size:13px;" scope="col">Base Labour Rate</th>
-                        <th style="font-size:13px;" scope="col">Labour Rate</th>
-                        <th style="font-size:13px;" scope="col">Supply Amount</th>
-                        <th style="font-size:13px;" scope="col">Labour Amount</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"><div class="form-check">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        </div>
-                        </th>
-                        <td style="font-size:13px;">Pipe</td>
-                        <td style="font-size:13px;">MS</td>
-                        <td style="font-size:13px;">Seamless</td>
-                        <td style="font-size:13px;">20</td>
-                        <td style="font-size:13px;">A-105</td>
-                        <td style="font-size:13px;">ASME-36.10</td>
-                        <td style="font-size:13px;">Buttweld	</td>
-                        <td style="font-size:13px;">15NB-1/2"</td>
-                        <td style="font-size:13px;"><input style="width:40px;border-radius: 5px;border: 1px solid grey;" type="text"></td>
-                        <td style="font-size:13px;"><input style="width:40px;border-radius: 5px;border: 1px solid grey;" type="text"></td>
-                        <td style="font-size:13px;"><input style="width:40px;border-radius: 5px;border: 1px solid grey;" type="text"></td>
-                        <td style="font-size:13px;"><input style="width:40px;border-radius: 5px;border: 1px solid grey;" type="text"></td>
-                        <td style="font-size:13px;"><input style="width:40px;border-radius: 5px;border: 1px solid grey;" type="text"></td>
-                        <td style="font-size:13px;"><input style="width:40px;border-radius: 5px;border: 1px solid grey;" type="text"></td>
-                        <td style="font-size:13px;"><input style="width:40px;border-radius: 5px;border: 1px solid grey;" type="text"></td>
-                      </tr>
-                      
-                    </tbody>
-                  </table>
-                </div>
-                </div>
-              </div>
-             
-              </div>
-              </div>
-              <div class="row">
-                <div align="center" class="col-md-4">
-                  <div class="btn-group dropend">
-                    <button style="font-size:13px;" type="button" class="btn bt1 btn-outline  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      Choose Action
-                    </button>
-                    <ul class="dropdown-menu">
-                     <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Delete This BOQ</a></li>
-                     <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Download This BOQ</a></li>
-                     <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Generate BOQ</a></li>
-                     <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Generate Quotation</a></li>
-                    </ul>
-                  </div>
-                </div>
-                  <div align="center" class="col-md-4">
-                    <p style="font-size:13px;margin-top:45px;color: grey">Enter Sheetname And proceed</p>
-                    <input placeholder="Enter Sheetname" class="form-control" style="font-Size:13px;border:1px solid grey;width: 250px;" type="text">
-                    <br />
-                    <button style="font-size:13px;margin-top:0px" type="button" class="btn bt1 btn-outline-primary">Add Sheet</button>
-                  </div>
-                  <div align="center" class="col-md-4">
-                    <p style="font-size:13px;margin-top:45px;color: grey">Select Items to be added to the sheet</p>
-                    <select style="margin-left: 20px;width: 200px;height: 35px;font-size:13px;" class="form-select form-control">
-                     <option style="font-size:13px;" selected></option>
-                     <option style="font-size:13px;" value="1">Add New Product</option>
-                     <option style="font-size:13px;" value="2">Add Accessories and Equipments</option>
-                     </select>
-                  </div>
-              </div>
-            </div>
-          </div>
-          
-          </div>
-          
-          
-          <div class="modal-footer">
-            <button style="font-size:13px;margin-top: 0px;" type="button" class="btn bt1 btn-outline-secondary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
-      </div>
-    </div>
-    </div>
+</div>
+</div>
+</div>
 </body>
 </html>
