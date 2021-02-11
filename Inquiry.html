@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiry Section</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/54d282cde9.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <style>
+    .header{
+        padding:20px 10px 50px ;
+        letter-spacing: 3px;
+        background-image:linear-gradient(to left,#669eb1,#385c60);
+        color:#fff;
+    }
+    .container1{
+    margin: 20px;
+    margin-top: 30px;
+}
+.a1{
+    margin-top:10px;
+}
+.a1:hover{
+    background-color:#4f81b9;
+    color:#ffffff;
+}
+.drop1{
+    background-color:#669eb1;
+    width: 200px;
+    color: white;
+    height:40px;
+    font-size:13px;
+}
+.drop1:hover{
+    background-color:white;
+    border:2px solid #669eb1;
+    font-size:13px;
+}
+.nav1{
+    /* background-image: linear-gradient(to right, #); */
+    opacity: 0.95;
+}
+.nav-tabs .nav-link{
+    /* background-color:#fff; */
+
+}
+.nav-tabs .nav-link.active{
+    color: #236abb;
+}
+.nav-tabs .nav-link{
+    color: #669eb1;
+}
+</style>
+</head>
+<body>
+    <nav class="nav1 navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Company Name</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">BOQ section</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Inquery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Invoice</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Price</a>
+              </li>
+              </ul>
+              </div>
+              </div>
+    </nav>
+    <div class="header">
+        <p style="margin-top: 30px;" class="fs-2"> Inquiry Section </p> 
+        <div class="header1">
+        <p class="fs-6"></p>
+      </div>
+    </div>
+    <div class="container1">
+  
+        <p class="fs-6"><svg xmlns="http://www.w3.org/2000/svg" style="margin-right:5px;" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+          <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+        </svg>Inquiry</p>
+        <hr />
+    <div style="margin-top: 40px;" class="row">
+        <div style="margin-top:27px;margin-left:70px" class="col-md-2">
+            <div class="dropdown">
+                <button class="fs-6 drop1 btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  Quotation Revision
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li><a style="font-size:13px;" class="a1 dropdown-item" data-bs-toggle="collapse" href="#rev1" role="button" aria-expanded="false" aria-controls="collapseExample">Revision1</a></li>
+                  <li><a style="font-size:13px;" class="a1 dropdown-item" data-bs-toggle="collapse" href="" role="button" aria-expanded="false" aria-controls="collapseExample">Revision1</a></li>
+                  <li><a style="font-size:13px;" class="a1 dropdown-item" data-bs-toggle="collapse" href="" role="button" aria-expanded="false" aria-controls="collapseExample">Revision1</a></li>
+                  <li><a style="font-size:13px;" class="a1 dropdown-item" data-bs-toggle="collapse" href="" role="button" aria-expanded="false" aria-controls="collapseExample">Revision1</a></li>
+                </ul>
+              </div>
+        </div>
+        <div style="margin-left:20px" class="col-md-2">
+            <label for="venderList" class="fs-6 form-label">Vender List</label>
+            <select style="font-size:12px;" class="form-select" id="venderList" aria-label="Default select example">
+                <option selected></option>
+                <option value="1">Vender_1</option>
+                <option value="2">Vender_2</option>
+                <option value="3">Vender_3</option>
+              </select>
+        </div>
+        <div style="margin-left: 35px;" class="col-md-2">
+            <label for="inquiryList" class="fs-6 form-label">Inquiry List</label>
+            <select style="font-size:12px;" name="" id="inquiryList" class="box1 form-select">
+                <option value="4">List1</option>
+                <option value="5">List2</option>    
+            </select>
+        </div>
+        <div style="margin-left: 35px;" class="col-md-2">
+            <label for="class" class="label1 fs-6 form-label">Inquiry Name</label>
+            <input style="font-size:12px;"  placeholder="Enter Inquiry Name" class="box1 form-control" type="text" id="class">
+        </div>
+        <div style="margin-left: 35px;" class="col-md-2">
+            <div class="dropdown">
+                <button  style="font-size:13px;margin-left: px;margin-top: 27px;" type="button" class="fs-6 drop1 btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Choose Action
+                </button>
+                <ul class="dropdown-menu">
+                 <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Delete This BOQ</a></li>
+                 <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Download This BOQ</a></li>
+                 <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Generate BOQ</a></li>
+                 <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Generate Quotation</a></li>
+                </ul>
+              </div>    
+        </div>
+        <div style="margin-top: 30px;" class="collapse" id="rev1">
+            <div style="border:none;margin: 10px;" class="card card-body">
+
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a style="font-size:15px;" class="nav-link" id="sheet1-tab" data-bs-toggle="tab" data-bs-target="#sheet1" type="button" role="tab" aria-controls="sheet1" aria-selected="false">Sheet1</a>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a style="font-size:15px;" class="nav-link" id="sheet2-tab" data-bs-toggle="tab" data-bs-target="#sheet2" type="button" role="tab" aria-controls="sheet2" aria-selected="false">sheet2</a>
+                    </li>
+                </ul>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade active" id="sheet1" role="tabpanel" aria-labelledby="sheet1-tab">
+                        <div class="row">
+                        <div class="col-md-12">
+                          <div class="table-responsive">
+                          <table class="table table-bordered table-striped table-hover caption-top tbl_code_with_mark">
+                            <caption></caption>
+                            <thead>
+                              <tr>
+                                <th style="font-size:13px;" scope="col">#</th>
+                                <th style="font-size:13px;" scope="col">Product</th>
+                                <th style="font-size:13px;" scope="col">MOC</th>
+                                <th style="font-size:13px;" scope="col">Manufacture Type</th>
+                                <th style="font-size:13px;" scope="col">Class/Grade</th>
+                                <th style="font-size:13px;" scope="col">Material Specs</th>
+                                <th style="font-size:13px;" scope="col">Standard Type</th>
+                                <th style="font-size:13px;" scope="col">Ends</th>
+                                <th style="font-size:13px;" scope="col">Size</th>
+                                <th style="font-size:13px;" scope="col">Qty</th>
+                                <th style="font-size:13px;" scope="col">Base Supply Rate</th>
+                                <th style="font-size:13px;" scope="col">Supply Rate</th>
+                                <th style="font-size:13px;" scope="col">Base Labour Rate</th>
+                                <th style="font-size:13px;" scope="col">Labour Rate</th>
+                                <th style="font-size:13px;" scope="col">Supply Amount</th>
+                                <th style="font-size:13px;" scope="col">Labour Amount</th>
+                                <!-- <th style="font-size:13px;" scope="col">Action</th> -->
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                               <th scope="row">
+                                 <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                   
+                                 </div>
+                               </th>
+                                <td style="font-size:13px;">Pipe</td>
+                                <td style="font-size:13px;">MS</td>
+                                <td style="font-size:13px;">Seamless</td>
+                                <td style="font-size:13px;">20</td>
+                                <td style="font-size:13px;">A-105</td>
+                                <td style="font-size:13px;">ASME-36.10</td>
+                                <td style="font-size:13px;">Buttweld	</td>
+                                <td style="font-size:13px;">15NB-1/2"</td>
+                                <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                                <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                                <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                                <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                                <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                                <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                                <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                                <!-- <td><span class="btn btn-sm btn-danger btn_row_add_below_end">+</span></td> -->
+                              
+                               </tr>  
+                              <!-- <tr>
+                               <th scope="row">
+                                 <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                   
+                                 </div>
+                               </th>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td><span class="btn btn-sm btn-danger btn_row_add_below_end">+</span></td>
+                             </tr>   -->
+                           </tbody>
+                          </table>
+                          <!-- <div class="text-center"> -->
+                           <!-- <span class="btn btn-sm btn-danger btn_row_add_below_end"> Add Row</span> -->
+                         <!-- </div> -->
+                        </div>
+                        </div>
+                      </div></div>
+                    <div class="tab-pane fade" id="sheet2" role="tabpanel" aria-labelledby="sheet2-tab"> <div class="row">
+                        <div class="col-md-12">
+                          <div class="table-responsive">
+                          <table class="table table-bordered table-striped table-hover caption-top tbl_code_with_mark">
+                            <caption></caption>
+                            <thead>
+                              <tr>
+                                <th style="font-size:13px;" scope="col">#</th>
+                                <th style="font-size:13px;" scope="col">Product</th>
+                                <th style="font-size:13px;" scope="col">MOC</th>
+                                <th style="font-size:13px;" scope="col">Manufacture Type</th>
+                                <th style="font-size:13px;" scope="col">Class/Grade</th>
+                                <th style="font-size:13px;" scope="col">Material Specs</th>
+                                <th style="font-size:13px;" scope="col">Standard Type</th>
+                                <th style="font-size:13px;" scope="col">Ends</th>
+                                <th style="font-size:13px;" scope="col">Size</th>
+                                <th style="font-size:13px;" scope="col">Qty</th>
+                                <th style="font-size:13px;" scope="col">Base Supply Rate</th>
+                                <th style="font-size:13px;" scope="col">Supply Rate</th>
+                                <th style="font-size:13px;" scope="col">Base Labour Rate</th>
+                                <th style="font-size:13px;" scope="col">Labour Rate</th>
+                                <th style="font-size:13px;" scope="col">Supply Amount</th>
+                                <th style="font-size:13px;" scope="col">Labour Amount</th>
+                                <!-- <th style="font-size:13px;" scope="col">Action</th> -->
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                               <th scope="row">
+                                 <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                   
+                                 </div>
+                               </th>
+                                <td style="font-size:13px;">Pipe</td>
+                                <td style="font-size:13px;">MS</td>
+                                <td style="font-size:13px;">Seamless</td>
+                                <td style="font-size:13px;">20</td>
+                                <td style="font-size:13px;">A-105</td>
+                                <td style="font-size:13px;">ASME-36.10</td>
+                                <td style="font-size:13px;">Buttweld	</td>
+                                <td style="font-size:13px;">15NB-1/2"</td>
+                                <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                                <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                                <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                                <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                                <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                                <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                                <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                                <!-- <td><span class="btn btn-sm btn-danger btn_row_add_below_end">+</span></td> -->
+                              
+                               </tr>  
+                              <!-- <tr>
+                               <th scope="row">
+                                 <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                   
+                                 </div>
+                               </th>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                               <td><span class="btn btn-sm btn-danger btn_row_add_below_end">+</span></td>
+                             </tr>   -->
+                           </tbody>
+                          </table>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
