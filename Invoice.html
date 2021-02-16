@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/54d282cde9.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script>
+
+    const openNav =()=>{
+               document.getElementById("mySide").style.width="250px";
+               document.getElementById("cont").style.marginLeft="250px";
+              //  document.getElementById("bt1").style.color="#fff";
+               document.getElementById("a1").style.fontSize="15px";
+               document.getElementById("a2").style.fontSize="15px";
+               document.getElementById("a3").style.fontSize="15px";
+               document.getElementById("a4").style.fontSize="15px";
+               document.getElementById("a5").style.fontSize="15px";
+               document.getElementById("a6").style.fontSize="15px";
+               document.getElementById("a7").style.fontSize="15px";
+               document.getElementById("h1").style.fontSize="15px";
+               document.getElementById("MI").style.fontSize="15px";
+               document.getElementById("NM").style.fontSize="15px";
+            }
+    const closeNav=()=>{
+               document.getElementById("mySide").style.width="75px";
+               document.getElementById("cont").style.marginLeft="75px";
+               document.getElementById("a1").style.fontSize="0px";
+               document.getElementById("a2").style.fontSize="0px";
+               document.getElementById("a3").style.fontSize="0px";
+               document.getElementById("a4").style.fontSize="0px";
+               document.getElementById("a5").style.fontSize="0px";
+               document.getElementById("a6").style.fontSize="0px";
+               document.getElementById("a7").style.fontSize="0px";
+               document.getElementById("h1").style.fontSize="0px";
+               document.getElementById("NM").style.fontSize="0px";
+               document.getElementById("MI").style.fontSize="0px";
+           }
+    const update=()=>{
+        document.getElementById("invbtn").style.marginTop="110px";
+    }
+    const load=()=>{
+        // alert("working")
+        document.getElementById("pro1").style.fontSize="15px";
+        document.getElementById("pro1").style.height="100%";
+        document.getElementById("pro1").style.border="1px solid lightgrey";
+        document.getElementById("pro1").style.boxShadow="0px 0px 20px 0px rgba(0, 0, 0, 0.24)";
+        document.getElementById("heading").style.fontSize="20px"
+        document.getElementById("heading").style.color="#669eb1"
+        document.getElementById("i1").style.color="grey";
+        document.getElementById("i1").style.fontWeight="bold";
+        document.getElementById("i2").style.color="grey";
+        document.getElementById("i2").style.fontWeight="bold";
+        document.getElementById("i3").style.color="grey";
+        document.getElementById("i3").style.fontWeight="bold";
+        document.getElementById("i4").style.color="grey";
+        document.getElementById("i4").style.fontWeight="bold";
+        document.getElementById("opnbtn").style.color="white";
+        document.getElementById("opnbtn").style.cursor="default";
+        document.getElementById("clsbtn").style.width="20";
+        document.getElementById("clsbtn").style.height="20";
+        document.getElementById("clsbtn").style.color="black";
+        document.getElementById("clsbtn").style.cursor="pointer";
+        document.getElementById("hr1").style.color="grey";
+        document.getElementById("pro1").style.visibility="visible";
+        document.getElementById("clsbtn").style.visibility="visible";
+
+
+    }
+    const cls=()=>{
+        document.getElementById("pro1").style.fontSize="0px";
+        document.getElementById("pro1").style.border="none";
+        document.getElementById("pro1").style.height="0px";
+        document.getElementById("pro1").style.background="#fafafa";
+        document.getElementById("pro1").style.boxShadow="none";
+        document.getElementById("pro1").style.visibility="hidden";
+        document.getElementById("heading").style.fontSize="0px"
+        document.getElementById("opnbtn").style.color="black";
+        document.getElementById("opnbtn").style.cursor="pointer";
+        document.getElementById("clsbtn").style.visibility="hidden";
+        document.getElementById("clsbtn").style.color="#fafafa";
+        document.getElementById("hr1").style.color="white";
+    }
+   
+  </script>
+    
+    <style>
+        .pro_detail1{
+        transition:  all 0.5s;
+        height:0;
+        border: none;
+        font-size:0px;
+        width: 500px;
+        visibility: hidden;
+        }
+        .pro_detail{
+        position:absolute;
+        top: 0;
+        right: 0;
+        margin-top:80px;
+        z-index: 1;
+        margin-left: 60%;
+        margin-right:20px;
+        transition: all 0.5s;
+        }
+/* Navbar */ 
+.sidenav a span{
+font-size: 0px;}  
+.menulines{
+  display:block;
+    font-size:20px;
+    cursor:pointer;
+        color: black;
+        margin-left: 5px;
+        transition: all .3s;
+}
+.sidenav{
+    height: 100%;
+    width: 75px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    z-index: 1;
+    transition: all .3s;
+    background: #fff;
+  box-shadow:0px 0px 20px 0px rgba(0, 0, 0, 0.24);
+}
+.sidenav a{
+    text-decoration:none;
+    font-size:15px;
+    color:rgb(75, 73, 73);
+    display: block;
+    padding:10px 0px 10px 20px;
+}
+/* .closebtn{
+    position:absolute;
+    top:0;
+    right: 25px;
+    font-size:45px!important;
+} */
+.sidenav a:hover{
+  color:#669eb1;
+  background: rgba(226, 233, 233, 0.377);
+}
+.sidenav a i{
+  margin-right: 15px;
+}
+.sidenav a i{
+  color:#8acee9;
+}
+.t1 th{
+color:#385c60;
+}
+.t1 tr:hover{
+    background:#fdffff ;
+}
+/* .t1 h1{
+    color:grey;
+} */
+.tab_head{
+    color:black;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-left: 40px;
+    padding-bottom: 20px;
+    padding-top: 40px;
+    background:#ebf3f5;
+}
+.head1{
+    margin-left:30px;
+    padding-bottom:30px;
+    padding-top: 30px;
+}
+.container1{
+    margin: 20px;
+    margin-top: 30px;
+    }
+    .drop1{
+    /* background-color:#669eb1; */
+    width: 200px;
+    color: white;
+    height:40px;
+}
+.drop1:hover{
+    background-color:white;
+    border:2px solid #669eb1;
+}
+body{
+      background: #fafafa;
+    }
+.bt1,.bt2   {
+    margin-top:30px;
+    color:#669eb1;
+    border: 1px solid #669eb1;
+    /* background-color:#669eb1; */
+}
+.bt1:focus{
+    outline:0px;
+}
+.drop1:focus{
+    outline:0px;
+}
+
+.bt1:hover{
+    background-color:#669eb1;
+    color: white;
+    
+}
+.bt3{
+    background-color:#669eb1;
+    color: white;   
+} 
+.bt3:hover{
+color: white;
+}
+.bt2:hover{
+    transform: scale(1.01,1.01);
+    box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.24);
+   color:#4f81b9;
+    
+}
+.box1{
+    width:150px;
+    margin-left: 50px;
+    margin-bottom: 25px;
+}
+.label1{
+    margin-left: 30px;
+}
+.nav1{
+    /* background-image: linear-gradient(to right, #); */
+    opacity: 0.95;
+}
+.nav-tabs .nav-link.active{
+    color: #236abb;
+}
+.nav-tabs .nav-link{
+    color: #669eb1;
+}
+@media (max-width: 360px){
+    .body1{
+        margin-left: 150px;
+    }
+    .pro_detail{
+        width: 150px;
+    }
+}
+    
+.ver{
+    border-left: 2px solid lightgrey;
+    position: absolute;
+    height: 120px;
+    margin-left: 100px;
+    margin-top:45px;
+}
+.ver1{
+    border-left: 2px solid lightgrey;
+    position: absolute;
+    height: 120px;
+    margin-left: 90px;
+    margin-top:45px;
+}
+    </style>    
+</head>
+<body>
+    <div style="margin-left:75px;transition: all .3s;" id="cont">
+        <div onmouseover="openNav()" onmouseout="closeNav()" id="pointer">
+        <div class="sidenav" id="mySide">
+        <div class="heading">
+        <p href=""><i style="font-size:20px;margin: 20px 30px ;" class="fas fa-bars"></i><span style="margin-left:-10px;transition: all .3s;font-size: 0px;" id="NM">Navigation Menu</span></p>
+        </div>
+        <hr style="margin-left: 15px;margin-right: 15px;" />
+        <div class="heading">
+            <p style="font-size:13px;padding-left:10px;margin-bottom: 10px;margin-top: 20px; font-weight: bold;color: #4f81b9;" >Main <span><i type="button"></i></span> </p>
+          </div>
+          <a href="#"><i style="margin-left: 8px;" class="fas fa-home"></i><span style="transition: all .3s;" id="h1">Home</span></a>
+            <a href="#"><i style="margin-left: 8px;" class="fas fa-box-open"></i><span style="transition: all .3s;" id="MI">Manage Inventory</span></a>
+            <hr style="margin-left: 15px;margin-right: 15px;" />
+          <div class="heading">
+              <p style="font-size:13px;padding-left:10px;margin-bottom: 10px;margin-top: 20px; font-weight: bold;color: #4f81b9;" >Sections</p>
+            </div>
+            <a href="#"><i style="margin-left: 8px;" class="fas fa-box"></i><span style="transition: all .3s;" id="a1">BOQ Section</span> </a>
+            <a href="#"><i style="margin-left: 8px;" class="fas fa-envelope-open-text"></i><span style="transition: all .3s;" id="a2">Inquiry Section</span></a>
+            <a href="#"><i style="margin-left: 8px;" class="fab fa-wpforms"></i><span style="transition: all .3s;" id="a3">PO section</span></a>
+            <a href="#"><i style="margin-left: 8px;" class="fas fa-file-invoice"></i><span style="transition: all .3s;" id="a5">Invoice Section</span></a>
+            <a href="#"><i style="margin-left: 8px;" class="fas fa-box-open"></i><span style="transition: all .3s;" id="a4">Inventory Section</span></a>
+            <hr  style="margin-left: 15px;margin-right: 15px;"/>
+            <div class="heading">
+              <p style="font-size:13px;padding-left:10px;margin-bottom: 10px;margin-top: 20px; font-weight: bold;color: #4f81b9;" >other</p>
+            </div>
+            <a href="#"><i style="margin-left: 8px;" class="far fa-bell"></i><span style="transition: all .3s;" id="a6">Notification</span></a>  
+            <a href="#"><i style="margin-left: 8px;" class="fas fa-sign-out-alt"></i><span style="transition: all .3s;" id="a7">Logout</span></a>
+        </div>
+        </div>
+       
+    <div class="container1">
+        
+        <p align="right" class="fs-6">Project Name<svg id="opnbtn" type="button" onclick="load()" style="margin-left:10px;transition: all 0.5s" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+            <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+          </svg></p>
+         <hr />
+          <div id="pro" class="pro_detail" id="collap">
+            <div style="transition: all .5s;" id="pro1" class="pro_detail1 card mb-3">
+                <div style="transition: all 0.1s;" class="body1 card-body">
+                 <div class="row">
+                     <div class="col-md-12">
+                     <p style="transition: all .5s;margin-left: 40px;" id="heading">
+                        Project Details<svg style="color:#fafafa;cursor:default;transition: all 0s;margin-left:250px;" id="clsbtn" onclick="cls()" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                            <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+                          </svg>
+                    </p>
+                    </div>
+                    <hr id="hr1" style="color:white;" />
+                </div>
+                    <div style="margin-top:10px" class="row">
+                     <div align="center" class="col-md-6">
+                         <p>
+                           <span id="i1"> PO Date: </span>14/02/2021    
+                         </p>
+                     </div>
+                     <div align="center" class="col-md-6">
+                        <p>
+                        <span id="i2"> PO Number:</span> 12345   
+                        </p>
+                    </div>
+                 </div>
+                 <div class="row">
+                    <div align="center" class="col-md-6">
+                        <p>
+                           <span id="i3">Contact Person:</span> xyz    
+                        </p>
+                    </div>
+                    <div align="center" class="col-md-6">
+                       <p>
+                       <span  id="i4">Contact Number:</span> 9876543210     
+                       </p>
+                   </div>
+                </div>
+                </div>
+              </div>
+              </div>
+
+            <div class="row">
+            <div style="margin-left: 0px;margin-top: 0px" class="col-md-12">
+                <a style="width:100%;height:50px;margin-top: 32.5px;padding-left: 30px;padding-top:12px;text-align: left;" class="drop1 bt2 btn " data-bs-toggle="collapse" data-bs-target="#table" aria-expanded="false" aria-controls="collapseExample"  ><i style="margin-right: 20px;" class="fas fa-edit"></i>Generate Invoices</a>
+            </div>
+
+            <div class="collapse" id="table">
+                <div style="margin-top: 30px;background-color:#fafafa;" class="card card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover caption-top tbl_code_with_mark">
+                          <caption></caption>
+                          <thead style="background-color:#fff;">
+                            <tr>
+                              <th style="font-size:13px;" scope="col">#</th>
+                              <th style="font-size:13px;" scope="col">Product</th>
+                              <th style="font-size:13px;" scope="col">MOC</th>
+                              <th style="font-size:13px;" scope="col">Manufacture Type</th>
+                              <th style="font-size:13px;" scope="col">Class/Grade</th>
+                              <th style="font-size:13px;" scope="col">Material Specs</th>
+                              <th style="font-size:13px;" scope="col">Standard Type</th>
+                              <th style="font-size:13px;" scope="col">Ends</th>
+                              <th style="font-size:13px;" scope="col">Size</th>
+                              <th style="font-size:13px;" scope="col">Purchase Rate</th>
+                              <th style="font-size:13px;" scope="col">Received Quantity</th>
+                              <th style="font-size:13px;" scope="col">Location</th>
+                              <th style="font-size:13px;" scope="col">Received Date</th>
+                              <!-- <th style="font-size:13px;" scope="col">Labour Rate</th>
+                              <th style="font-size:13px;" scope="col">Supply Amount</th>
+                              <th style="font-size:13px;" scope="col">Labour Amount</th> -->
+                              <!-- <th style="font-size:13px;" scope="col">Action</th> -->
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                             <th scope="row">
+                               <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                 
+                               </div>
+                             </th>
+                              <td style="font-size:13px;">Pipe</td>
+                              <td style="font-size:13px;">MS</td>
+                              <td style="font-size:13px;">Seamless</td>
+                              <td style="font-size:13px;">20</td>
+                              <td style="font-size:13px;">A-105</td>
+                              <td style="font-size:13px;">ASME-36.10</td>
+                              <td style="font-size:13px;">Buttweld	</td>
+                              <td style="font-size:13px;">15NB-1/2"</td>
+                              <td style="font-size:13px;">105.00</td>
+                              <td style="font-size:13px;">110</td>
+                              <td style="font-size:13px;">Pune</td>
+                              <td style="font-size:13px;">19/10/2020</td>
+                              <!-- <td style="font-size:13px;"></td>
+                              <td style="font-size:13px;"></td>
+                              <td style="font-size:13px;"></td> -->
+                              <!-- <td><span class="btn btn-sm btn-danger btn_row_add_below_end">+</span></td> -->
+                            
+                             </tr>  
+                         </tbody>
+                        </table>
+                      </div>
+                      <div class="row">
+                          <div align="center" class="col-md-2">
+                              <a class="drop1 bt1 btn" data-bs-toggle="collapse" data-bs-target="#Invoice" area-expanded="false" aria-controls="collapseExample" >Invoice Details</a>
+                          </div>
+                          <div class="col-md-10">
+                            <div class="collapse" id="Invoice">
+                                <div style="margin-top: 20px;margin-bottom: 20px;" class="card card-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label for="site" class="label1 fs-6 form-label">Contact Name</label>
+                                            <input style="font-size:12px;"  placeholder="Enter Site" class="box1 form-control" type="text" id="site">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="site" class="label1 fs-6 form-label">Mobile Number</label>
+                                            <input style="font-size:12px;"  placeholder="Enter Site" class="box1 form-control" type="text" id="site">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="site" class="label1 fs-6 form-label">AddressTo</label>
+                                            <input style="font-size:12px;"  placeholder="Enter Site" class="box1 form-control" type="text" id="site">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="site" class="label1 fs-6 form-label">Order Date</label>
+                                            <input style="font-size:12px;"  placeholder="Enter Site" class="box1 form-control" type="text" id="site">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label for="site" class="label1 fs-6 form-label">Email Address</label>
+                                            <input style="font-size:12px;"  placeholder="Enter Site" class="box1 form-control" type="email" id="site">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="site" class="label1 fs-6 form-label">Invoice Type</label>
+                                            <input style="font-size:12px;"  placeholder="Enter Site" class="box1 form-control" type="text" id="site">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="site" class="label1 fs-6 form-label">Hsn/Sac</label>
+                                            <select class="box1 form-select form-select-sm" aria-label=".form-select-sm example">
+                                                <option selected></option>
+                                                <option value="1">Suppy</option>
+                                                <option value="2">Labour</option>
+                                                <option value="3">Suppy & Labour</option>
+                                              </select>
+                                        </div>
+                                        <div align="center" class="col-md-3">
+                                            <a id="generate" style="margin-top: 28px;" class=" bt3 btn" >Generate Invoice</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+     
+                      </div>
+                     
+                </div>
+              </div>
+
+
+
+            <div style="margin-left: 0px;margin-top: 0px" class="col-md-12">
+                <a style="text-align: left;width:100%;height:50px;margin-top: 32.5px;padding-left: 30px;padding-top:12px" class="drop1 bt2 btn " data-bs-toggle="collapse" data-bs-target="#search_inv" aria-expanded="false" aria-controls="collapseExample"  ><i style="margin-right: 20px;" class="fas fa-search"></i>Search Invoice</a>
+            </div>
+
+            
+          <div class="collapse" id="search_inv">
+            <div style="margin-top:20px" class="card card-body">
+             
+              <div align="center" class="row">
+                    <div style="margin-top:60px;margin-bottom: 30px;" class="col-md-3">
+                      <label for="inv_id" style="margin-left: -60px!important;color: #669eb1;"  class="form-label">Invoice ID</label>
+                      <input type="text" class="form-control input-group input-group-sm mb-3" placeholder="Enter Id" style="width: 200px;margin-left: 60px;" >
+                    </div>
+                    <div class="col-md-1">
+                      <div class="ver">
+                      </div>
+                    </div>
+                    <div style="margin-top:60px;margin-bottom: 30px;" class="col-md-3">
+                      <label for="inv_id" style="margin-left:0px!important;color: #669eb1;" class="form-label">Select Month</label>
+                      <select class="form-select form-select" style="width:200px;margin-left: 115px;" aria-label=".form-select-sm example">
+                          <option selected>select</option>
+                          <option value="1">January</option>
+                          <option value="2">February</option>
+                          <option value="3">March</option>
+                          <option value="3">April</option>
+                          <option value="3">May</option>
+                          <option value="3">June</option>
+                          <option value="3">July</option>
+                          <option value="3">August</option>
+                          <option value="3">September</option>
+                          <option value="3">October</option>
+                          <option value="3">November</option>
+                          <option value="3">December</option>
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                      <div class="ver1">
+                      </div>
+                    </div>
+                    <div style="margin-top:20px;margin-bottom: 30px;" class="col-md-4">
+                      <p style="color: #669eb1;">Choose Date Range</p>
+                      <div style="margin-left:50px;" class="mb-3 row">
+                          <label style="color: #669eb1;" for="Start_Date" class="col-sm-4 col-form-label">Start Date</label>
+                          <div class="col-sm-8">
+                            <input type="date" class="form-control" style="width: 180px;margin-left: -120px;" id="Start_Date" value="email@example.com">
+                          </div>
+                        </div>
+                        <div style="margin-left:50px;" class="mb-3 row">
+                          <label style="color: #669eb1;" for="End_Date" class="col-sm-4 col-form-label">End Date</label>
+                          <div class="col-sm-8">
+                            <input type="date" class="form-control" id="End_Date"  style="width: 180px;margin-left: -120px;" value="email@example.com">
+                          </div>
+                        </div>
+                      <!-- <label for="inv_id" style="margin-left: -100px!important;color: #669eb1;" class="form-label">Start Date</label>
+                      <input type="date" class="form-control" placeholder="Enter Id" style="width: 200px" > -->
+                    </div>
+                    <div style="margin-left:0px" class="row">
+                        <div class="col-md-12">
+                            <a href="#" type="button" class=" bt3 btn">Search</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div style="margin-left: 0px;margin-top: 0px" class="col-md-12">
+                <a style="text-align: left;width:100%;height:50px;margin-top: 32.5px;padding-left: 30px;padding-top:12px" class="drop1 bt2 btn " data-bs-toggle="collapse" data-bs-target="#Existing_inv" aria-expanded="false" aria-controls="collapseExample"  ><i style="margin-right: 20px;" class="fab fa-wpforms"></i>Existing Invoices</a>
+            </div>
+          </div>
+          
+
+          <div style="margin-top: 50px;" class="collapse" id="Existing_inv">
+              <div style="margin-top: 50px;padding-left: 0px;padding-right:0px;width: 1000px;margin-left: 200px;" class="card card-body">
+                <table align="center" style="width:900px" class="t1 table table-hover">
+                <div class="head1 row">
+                    <label style="color: #669eb1;" for="End_Date" class="col-sm-4 col-form-label">Invoices Of Month</label>
+                            <div class="col-sm-8">
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="width:150px;margin-left: -180px;" name="" id="">
+                                <option value="selected">February</option>
+                                <option value="1"> January
+                                </option>
+                                <option value="3"> March
+                                </option>
+                                </select>
+                            </div>
+                            <p>Check Monthly invoices</p>
+                </div>
+                    <div class="tab_head">
+                    <p class="fs-3" >February 2021</p>
+                <p style="color:grey ;">Report Of this Month</p>
+            </div>    
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Invoice ID</th>
+                        <th scope="col">Invoice Date</th>
+                        <th scope="col">Invoice Total</th>
+                        <th scope="col">Invoice GST</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="col">1</th>
+                    <td><a style="text-decoration:none;color:black" href="">INV293028</a></td>
+                    <td>01/01/2021</td>
+                    <td>2,00,000</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <th scope="col">2</th>
+                    <td><a style="text-decoration:none;color:black" href="">INV313028</a></td>
+                    <td>12/02/2021</td>
+                    <td>5,00,000</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <th scope="col">3</th>
+                    <td><a style="text-decoration:none;color:black" href="">INV593028</a></td>
+                    <td>30/03/2021</td>
+                    <td>2,00,000</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <th scope="col">4</th>
+                    <td><a style="text-decoration:none;color:black" href="">INV293028</a></td>
+                    <td>01/01/2021</td>
+                    <td>2,00,000</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <th scope="col">5</th>
+                    <td><a style="text-decoration:none;color:black" href="">INV293028</a></td>
+                    <td>01/01/2021</td>
+                    <td>2,00,000</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <th scope="col">6</th>
+                    <td><a style="text-decoration:none;color:black" href="">INV293028</a></td>
+                    <td>01/01/2021</td>
+                    <td>2,00,000</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <th scope="col">7</th>
+                    <td><a style="text-decoration:none;color:black" href="">INV293028</a></td>
+                    <td>01/01/2021</td>
+                    <td>2,00,000</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <th scope="col">8</th>
+                    <td><a style="text-decoration:none;color:black" href="">INV293028</a></td>
+                    <td>01/01/2021</td>
+                    <td>2,00,000</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <th scope="col">9</th>
+                    <td><a style="text-decoration:none;color:black" href="">INV293028</a></td>
+                    <td>01/01/2021</td>
+                    <td>2,00,000</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <th scope="col">10</th>
+                    <td><a style="text-decoration:none;color:black" href="">INV293028</a></td>
+                    <td>01/01/2021</td>
+                    <td>2,00,000</td>
+                    <td>2000</td>
+                </tr>
+                </tbody>
+                  </table>
+              </div>
+          </div>
+    </div>
+    </div>
+</body>
+</html>
