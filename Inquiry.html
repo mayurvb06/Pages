@@ -312,7 +312,7 @@ body{
           </div>
 
     <div style="margin-top: 40px;" class="row">
-        <div style="margin-top:27px;margin-left:70px" class="col-md-2">
+        <div style="margin-top:27px;margin-left:120px" class="col-md-3">
             <div class="dropdown">
                 <button class="fs-6 drop1 btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                   Quotation Revision
@@ -325,52 +325,40 @@ body{
                 </ul>
               </div>
         </div>
-        <div style="margin-left:20px" class="col-md-2">
-            <label for="venderList" class="fs-6 form-label">Vender List</label>
-            <select style="font-size:12px;" class="form-select" id="venderList" aria-label="Default select example">
+        <div class="col-md-2">
+            <label for="venderList" style="margin-left: -50px;" class="fs-6 form-label">Vender List</label>
+            <select style="width:200px;font-size:12px;margin-left: -50px;" class="form-select" id="venderList" aria-label="Default select example">
                 <option selected></option>
                 <option value="1">Vender_1</option>
                 <option value="2">Vender_2</option>
                 <option value="3">Vender_3</option>
               </select>
         </div>
-        <div style="margin-left: 35px;" class="col-md-2">
+        <div class="col-md-2">
             <label for="inquiryList" class="fs-6 form-label">Inquiry List</label>
-            <select style="font-size:12px;" name="" id="inquiryList" class="box1 form-select">
+            <select style="font-size:12px;width:200px" name="" id="inquiryList" class="box1 form-select">
                 <option value="4">List1</option>
                 <option value="5">List2</option>    
             </select>
         </div>
-        <div style="margin-left: 35px;" class="col-md-2">
-            <label for="class" class="label1 fs-6 form-label">Inquiry Name</label>
-            <input style="font-size:12px;"  placeholder="Enter Inquiry Name" class="box1 form-control" type="text" id="class">
+        <div class="col-md-2">
+            <label for="class" style="margin-left: 50px;" class="label1 fs-6 form-label">Inquiry Name</label>
+            <input style="font-size:12px;width:200px;margin-left: 50px;"  placeholder="Enter Inquiry Name" class="box1 form-control" type="text" id="class">
         </div>
-        <div style="margin-left: 35px;" class="col-md-2">
-            <div class="dropdown">
-                <button  style="font-size:13px;margin-left: px;margin-top: 27px;" type="button" class="fs-6 drop1 btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  Choose Action
-                </button>
-                <ul class="dropdown-menu">
-                 <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Delete This BOQ</a></li>
-                 <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Download This BOQ</a></li>
-                 <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Generate BOQ</a></li>
-                 <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Generate Quotation</a></li>
-                </ul>
-              </div>    
         </div>
         <div style="margin-top: 30px;" class="collapse" id="rev1">
             <div style="border:1px solid #88d1e9;margin: 10px;background-color: #fafafa;" class="card card-body">
 
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <a style="font-size:15px;" class="nav-link" id="sheet1-tab" data-bs-toggle="tab" data-bs-target="#sheet1" type="button" role="tab" aria-controls="sheet1" aria-selected="false">Sheet1</a>
+                            <a style="font-size:15px;" class="nav-link active" id="sheet1-tab" data-bs-toggle="tab" data-bs-target="#sheet1" type="button" role="tab" aria-controls="sheet1" aria-selected="false">Sheet1</a>
                       </li>
                       <li class="nav-item" role="presentation">
                         <a style="font-size:15px;" class="nav-link" id="sheet2-tab" data-bs-toggle="tab" data-bs-target="#sheet2" type="button" role="tab" aria-controls="sheet2" aria-selected="false">sheet2</a>
                     </li>
                 </ul>
                   <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade active" id="sheet1" role="tabpanel" aria-labelledby="sheet1-tab">
+                    <div class="tab-pane fade show active" id="sheet1" role="tabpanel" aria-labelledby="sheet1-tab">
                         <div class="row">
                         <div class="col-md-12">
                           <div class="table-responsive">
@@ -427,7 +415,8 @@ body{
                           </table>
                         </div>
                         </div>
-                      </div></div>
+                      </div>
+                    </div>
                     <div class="tab-pane fade" id="sheet2" role="tabpanel" aria-labelledby="sheet2-tab"> <div class="row">
                         <div class="col-md-12">
                           <div class="table-responsive">
@@ -511,9 +500,20 @@ body{
                       </div>
                     </div>
                   </div>
+                  <div style="margin-left: 35px;" class="col-md-2">
+                    <div class="dropdown">
+                        <a  style="font-size:13px;margin-left: px;height:35px;margin-top: 27px;width: 150px;font-size: 13px;" type="button" class=" drop1 btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                          Choose Action
+                        </a>
+                        <ul class="dropdown-menu">
+                         <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Generate and Send Inquiry</a></li>
+                         <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Download Inquiry</a></li>
+                         <li><a style="font-size:13px;" class="a1 dropdown-item" href="#">Delete Inquiry</a></li>
+                        </ul>
+                      </div>    
+                </div>
             </div>
           </div>
-        </div>
     </div>
 </div>
 

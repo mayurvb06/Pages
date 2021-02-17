@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PO Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/54d282cde9.js" crossorigin="anonymous"></script>
+
+</head>
+<script>
+
+  const openNav =()=>{
+             document.getElementById("mySide").style.width="250px";
+             document.getElementById("cont").style.marginLeft="250px";
+            //  document.getElementById("bt1").style.color="#fff";
+             document.getElementById("a1").style.fontSize="15px";
+             document.getElementById("a2").style.fontSize="15px";
+             document.getElementById("a3").style.fontSize="15px";
+             document.getElementById("a4").style.fontSize="15px";
+             document.getElementById("a5").style.fontSize="15px";
+             document.getElementById("a6").style.fontSize="15px";
+             document.getElementById("a7").style.fontSize="15px";
+             document.getElementById("h1").style.fontSize="15px";
+             document.getElementById("MI").style.fontSize="15px";
+             document.getElementById("NM").style.fontSize="15px";
+          }
+  const closeNav=()=>{
+             document.getElementById("mySide").style.width="75px";
+             document.getElementById("cont").style.marginLeft="75px";
+             document.getElementById("a1").style.fontSize="0px";
+             document.getElementById("a2").style.fontSize="0px";
+             document.getElementById("a3").style.fontSize="0px";
+             document.getElementById("a4").style.fontSize="0px";
+             document.getElementById("a5").style.fontSize="0px";
+             document.getElementById("a6").style.fontSize="0px";
+             document.getElementById("a7").style.fontSize="0px";
+             document.getElementById("h1").style.fontSize="0px";
+             document.getElementById("NM").style.fontSize="0px";
+             document.getElementById("MI").style.fontSize="0px";
+         }
+  const update=()=>{
+      document.getElementById("invbtn").style.marginTop="110px";
+  }
+  const load=()=>{
+      // alert("working")
+      document.getElementById("pro1").style.fontSize="15px";
+      document.getElementById("pro1").style.height="100%";
+      document.getElementById("pro1").style.border="1px solid lightgrey";
+      document.getElementById("pro1").style.boxShadow="0px 0px 20px 0px rgba(0, 0, 0, 0.24)";
+      document.getElementById("heading").style.fontSize="20px"
+      document.getElementById("heading").style.color="#669eb1"
+      document.getElementById("i1").style.color="grey";
+      document.getElementById("i1").style.fontWeight="bold";
+      document.getElementById("i2").style.color="grey";
+      document.getElementById("i2").style.fontWeight="bold";
+      document.getElementById("i3").style.color="grey";
+      document.getElementById("i3").style.fontWeight="bold";
+      document.getElementById("i4").style.color="grey";
+      document.getElementById("i4").style.fontWeight="bold";
+      document.getElementById("opnbtn").style.color="white";
+      document.getElementById("opnbtn").style.cursor="default";
+      document.getElementById("clsbtn").style.width="20";
+      document.getElementById("clsbtn").style.height="20";
+      document.getElementById("clsbtn").style.color="black";
+      document.getElementById("clsbtn").style.cursor="pointer";
+      document.getElementById("hr1").style.color="grey";
+      document.getElementById("pro1").style.visibility="visible";
+      document.getElementById("clsbtn").style.visibility="visible";
+
+
+  }
+  const cls=()=>{
+      document.getElementById("pro1").style.fontSize="0px";
+      document.getElementById("pro1").style.border="none";
+      document.getElementById("pro1").style.height="0px";
+      document.getElementById("pro1").style.background="#fafafa";
+      document.getElementById("pro1").style.boxShadow="none";
+      document.getElementById("pro1").style.visibility="hidden";
+      document.getElementById("heading").style.fontSize="0px"
+      document.getElementById("opnbtn").style.color="black";
+      document.getElementById("opnbtn").style.cursor="pointer";
+      document.getElementById("clsbtn").style.visibility="hidden";
+      document.getElementById("clsbtn").style.color="#fafafa";
+      document.getElementById("hr1").style.color="white";
+  }
+ 
+</script>
+<style>
+  .pro_detail1{
+        transition:  all 0.5s;
+        height:0;
+        border: none;
+        font-size:0px;
+        width: 500px;
+        visibility: hidden;
+        }
+        .pro_detail{
+        position:absolute;
+        top: 0;
+        right: 0;
+        margin-top:80px;
+        z-index: 1;
+        margin-left: 60%;
+        margin-right:20px;
+        transition: all 0.5s;
+        }
+
+/* Navbar */
+.sidenav a span{
+font-size: 0px;}  
+.menulines{
+  display:block;
+    font-size:20px;
+    cursor:pointer;
+        color: black;
+        margin-left: 5px;
+        transition: all .3s;
+}
+.sidenav{
+    height: 100%;
+    width: 75px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    z-index: 1;
+    transition: all .3s;
+    background: #fff;
+  box-shadow:0px 0px 20px 0px rgba(0, 0, 0, 0.24);
+}
+.sidenav a{
+    text-decoration:none;
+    font-size:15px;
+    color:rgb(75, 73, 73);
+    display: block;
+    padding:10px 0px 10px 20px;
+}
+.sidenav a:hover{
+  color:#669eb1;
+  background: rgba(226, 233, 233, 0.377);
+}
+.sidenav a i{
+  margin-right: 15px;
+}
+.sidenav a i{
+  color:#8acee9;
+}
+/* End of Navbar */
+    .container1{
+    margin: 20px;
+    margin-top: 30px;
+}
+.drop1{
+    background-color:#669eb1;
+    width: 200px;
+    color: white;
+    height:40px;
+}
+.drop1:hover{
+    background-color:white;
+    border:2px solid #669eb1;
+}
+.bt1{
+    /* margin-top:30px; */
+    color:white;
+    border: 1px solid #669eb1;
+    background-color:#669eb1;
+}
+.bt1:hover{
+    background-color:#4f81b9;
+    
+}
+.a1{
+    margin-top:10px;
+}
+.a1:hover{
+    background-color:#4f81b9;
+    color:#ffffff;
+}
+.nav1{
+    /* background-image: linear-gradient(to right, #); */
+    opacity: 0.95;
+}
+.nav-tabs .nav-link.active{
+    color: #236abb;
+}
+.nav-tabs .nav-link{
+    color: #669eb1;
+}
+</style>
+<body>
+  <div style="margin-left:75px;transition: all .3s;" id="cont">
+    <div onmouseover="openNav()" onmouseout="closeNav()" id="pointer">
+    <div class="sidenav" id="mySide">
+    <div class="heading">
+    <p href=""><i style="font-size:20px;margin: 20px 30px ;" class="fas fa-bars"></i><span style="margin-left:-10px;transition: all .3s;font-size: 0px;" id="NM">Navigation Menu</span></p>
+    </div>
+    <hr style="margin-left: 15px;margin-right: 15px;" />
+    <div class="heading">
+        <p style="font-size:13px;padding-left:10px;margin-bottom: 10px;margin-top: 20px; font-weight: bold;color: #4f81b9;" >Main <span><i type="button"></i></span> </p>
+      </div>
+      <a href="#"><i style="margin-left: 8px;" class="fas fa-home"></i><span style="transition: all .3s;" id="h1">Home</span></a>
+        <a href="#"><i style="margin-left: 8px;" class="fas fa-box-open"></i><span style="transition: all .3s;" id="MI">Manage Inventory</span></a>
+        <hr style="margin-left: 15px;margin-right: 15px;" />
+      <div class="heading">
+          <p style="font-size:13px;padding-left:10px;margin-bottom: 10px;margin-top: 20px; font-weight: bold;color: #4f81b9;" >Sections</p>
+        </div>
+        <a href="#"><i style="margin-left: 8px;" class="fas fa-box"></i><span style="transition: all .3s;" id="a1">BOQ Section</span> </a>
+        <a href="#"><i style="margin-left: 8px;" class="fas fa-envelope-open-text"></i><span style="transition: all .3s;" id="a2">Inquiry Section</span></a>
+        <a href="#"><i style="margin-left: 8px;" class="fab fa-wpforms"></i><span style="transition: all .3s;" id="a3">PO section</span></a>
+        <a href="#"><i style="margin-left: 8px;" class="fas fa-file-invoice"></i><span style="transition: all .3s;" id="a5">Invoice Section</span></a>
+        <a href="#"><i style="margin-left: 8px;" class="fas fa-box-open"></i><span style="transition: all .3s;" id="a4">Inventory Section</span></a>
+        <hr  style="margin-left: 15px;margin-right: 15px;"/>
+        <div class="heading">
+          <p style="font-size:13px;padding-left:10px;margin-bottom: 10px;margin-top: 20px; font-weight: bold;color: #4f81b9;" >other</p>
+        </div>
+        <a href="#"><i style="margin-left: 8px;" class="far fa-bell"></i><span style="transition: all .3s;" id="a6">Notification</span></a>  
+        <a href="#"><i style="margin-left: 8px;" class="fas fa-sign-out-alt"></i><span style="transition: all .3s;" id="a7">Logout</span></a>
+    </div>
+    </div>
+    <div class="container1">
+      <p align="right" class="fs-6">Project Name<svg id="opnbtn" type="button" onclick="load()" style="margin-left:10px;transition: all 0.5s" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+      </svg></p>
+     <hr />
+      <div id="pro" class="pro_detail" id="collap">
+        <div style="transition: all .5s;" id="pro1" class="pro_detail1 card mb-3">
+            <div style="transition: all 0.1s;" class="body1 card-body">
+             <div class="row">
+                 <div class="col-md-12">
+                 <p style="transition: all .5s;margin-left: 40px;" id="heading">
+                    Project Details<svg style="color:#fafafa;cursor:default;transition: all 0s;margin-left:250px;" id="clsbtn" onclick="cls()" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                        <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+                      </svg>
+                </p>
+                </div>
+                <hr id="hr1" style="color:white;" />
+            </div>
+                <div style="margin-top:10px" class="row">
+                 <div align="center" class="col-md-6">
+                     <p>
+                       <span id="i1"> PO Date: </span>14/02/2021    
+                     </p>
+                 </div>
+                 <div align="center" class="col-md-6">
+                    <p>
+                    <span id="i2"> PO Number:</span> 12345   
+                    </p>
+                </div>
+             </div>
+             <div class="row">
+                <div align="center" class="col-md-6">
+                    <p>
+                       <span id="i3">Contact Person:</span> xyz    
+                    </p>
+                </div>
+                <div align="center" class="col-md-6">
+                   <p>
+                   <span  id="i4">Contact Number:</span> 9876543210     
+                   </p>
+               </div>
+            </div>
+            </div>
+          </div>
+          </div>
+          <div style="margin-top: 50px;" class="row">
+              <div align="center" class="col-md-6">
+                <div class="dropdown">
+                    <button class="fs-6 drop1 bt1 btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                      Quotation Revision
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <li><a style="font-size:13px;" class="a1 dropdown-item" data-bs-toggle="collapse" href="#Inquiry1" role="button" aria-expanded="false" aria-controls="collapseExample">Inquiry1</a></li>
+                      <li><a style="font-size:13px;" class="a1 dropdown-item" data-bs-toggle="collapse" href="" role="button" aria-expanded="false" aria-controls="collapseExample">Inquiry2</a></li>
+                      <li><a style="font-size:13px;" class="a1 dropdown-item" data-bs-toggle="collapse" href="" role="button" aria-expanded="false" aria-controls="collapseExample">Inquiry3</a></li>
+                    </ul>
+                  </div>
+              </div>
+              <div align="center" class="col-md-6">
+                  <div class="dropdown">
+                      <button class="fs-6 drop1 btn bt1 btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        PO List
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a style="font-size:13px;" class="a1 dropdown-item " >PO1</a></li>
+                      </ul>
+                  </div>
+
+              </div>
+            
+          </div>
+          <div class="collapse" id="Inquiry1">
+            <div style="margin-top: 50px;" class="card card-body">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a style="font-size:15px;" class="nav-link active" id="sheet1-tab" data-bs-toggle="tab" data-bs-target="#sheet1" type="button" role="tab" aria-controls="sheet1" aria-selected="false">Sheet1</a>
+                  </li>
+                  </ul>
+                  <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="sheet1" role="tabpanel" aria-labelledby="sheet1-tab">
+                    <div class="row">
+                    <div class="col-md-12">
+                      <div class="table-responsive">
+                      <table class="table table-bordered table-striped table-hover caption-top tbl_code_with_mark">
+                        <caption></caption>
+                        <thead>
+                          <tr>
+                            <th style="font-size:13px;" scope="col">#</th>
+                            <th style="font-size:13px;" scope="col">Product</th>
+                            <th style="font-size:13px;" scope="col">MOC</th>
+                            <th style="font-size:13px;" scope="col">Manufacture Type</th>
+                            <th style="font-size:13px;" scope="col">Class/Grade</th>
+                            <th style="font-size:13px;" scope="col">Material Specs</th>
+                            <th style="font-size:13px;" scope="col">Standard Type</th>
+                            <th style="font-size:13px;" scope="col">Ends</th>
+                            <th style="font-size:13px;" scope="col">Size</th>
+                            <th style="font-size:13px;" scope="col">Qty</th>
+                            <th style="font-size:13px;" scope="col">Base Supply Rate</th>
+                            <th style="font-size:13px;" scope="col">Supply Rate</th>
+                            <th style="font-size:13px;" scope="col">Base Labour Rate</th>
+                            <th style="font-size:13px;" scope="col">Labour Rate</th>
+                            <th style="font-size:13px;" scope="col">Supply Amount</th>
+                            <th style="font-size:13px;" scope="col">Labour Amount</th>
+                            <!-- <th style="font-size:13px;" scope="col">Action</th> -->
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                           <th scope="row">
+                             <div class="form-check">
+                               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                               
+                             </div>
+                           </th>
+                            <td style="font-size:13px;">Pipe</td>
+                            <td style="font-size:13px;">MS</td>
+                            <td style="font-size:13px;">Seamless</td>
+                            <td style="font-size:13px;">20</td>
+                            <td style="font-size:13px;">A-105</td>
+                            <td style="font-size:13px;">ASME-36.10</td>
+                            <td style="font-size:13px;">Buttweld	</td>
+                            <td style="font-size:13px;">15NB-1/2"</td>
+                            <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                            <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                            <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                            <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                            <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                            <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                            <td style="font-size:13px;"><input style="width:100%;border-radius: 5px;border: 1px solid grey;" type="text"></td>
+                            <!-- <td><span class="btn btn-sm btn-danger btn_row_add_below_end">+</span></td> -->
+                          
+                           </tr>  
+                       </tbody>
+                      </table>
+                    </div>
+                    </div>
+                    </div>
+                  </div>
+                
+                </div>
+                <div class="row">
+                <div align="center" class="col-md-2">
+                  <a style="font-size:13px;margin-left: px;height:35px;margin-top: 27px;width: 150px;font-size: 13px;"  class="drop1 bt1 btn btn-light">Generate PO</a>
+              </div>
+            </div>
+            </div>
+          </div>
+    </div>
+    </div>
+    
+</body>
+</html>
