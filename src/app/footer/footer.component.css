@@ -1,0 +1,9 @@
+.cont32{
+    position: relative;
+    font-weight: normal;
+    color: #fff;
+    padding: 30px 10px 30px;
+    background-image: url(C:\Angular\input-val\src\footer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
